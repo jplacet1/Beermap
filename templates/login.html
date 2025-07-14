@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login_e_cadastro.css' %}">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="\media\beermap_logo_e_nome.png" alt="Logo" class="logo-img"></a>
+            </div>
+            <div class="header-btn">
+                <a href="{% url 'cadastro' %}" class="btn">Cadastro</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Login</h1>  
+            {% if erro %}
+                    <p style="color: red;">{{ erro }}</p>
+            {% endif %}
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Usuário" name="username">
+                <br>
+                <input type="password" placeholder="Senha" name="senha">
+                <br>
+                <input type="submit" value="Entrar">
+                
+                <a href="{% url 'cadastro' %}">Ainda não possui cadastro? Clique aqui</a>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

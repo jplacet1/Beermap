@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Cervejaria</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+    
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="\media\beermap_logo_e_nome.png" alt="Logo" class="logo-img"></a>
+            </div>
+            <div class="header-btn">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Adicionar Cervejaria</h1>
+            <br>
+            <form action="{%url 'adicionar_cervejaria'%}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="nome" placeholder="Nome da cervejaria">
+                <br>
+                <input type="text" id="cep" name="cep" 
+                    placeholder="00000-000" 
+                    pattern="\d{5}-\d{3}" 
+                    maxlength="9" 
+                    inputmode="numeric" 
+                    required>
+                <br>
+                <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro" />
+                <input type="text" id="numero" name="numero" placeholder="Número">
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" />
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" />
+                <input type="text" id="estado" name="estado" placeholder="Estado" />
+                <br>
+                <input type="text" name="mapa_embed" placeholder="Insira aqui o html do Google Maps">
+                <br>
+                <p>Para copiar o html do Google Maps:</h2>
+                <p>1. Pesquise o local no Google Maps</h2>
+                <p>2. Clique em Compartilhar</h2>
+                <p>3. Escolha "Incorporar um mapa"</h2>
+                <p>4. Copie o html</h2>
+                <input type="file" name="imagens" multiple>
+                <label>Foto Principal</label>
+                    <input type="file" name="foto_principal">
+                <input type="submit" value="Adicionar cervejaria">
+            </form>
+        
+    </div>
+</main>
+<script>
+    document.getElementById('cep').addEventListener('blur', function() {
+        const cep = this.value.replace(/\D/g, '');  // Remove qualquer caractere não numérico
+
+        if (cep.length === 8) {  // Verifica se o CEP tem 8 dígitos
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.erro) {
+                        // Preenche os campos automaticamente
+                        document.getElementById('logradouro').value = data.logradouro;
+                        document.getElementById('bairro').value = data.bairro;
+                        document.getElementById('cidade').value = data.localidade;
+                        document.getElementById('estado').value = data.uf;
+                    } else {
+                        alert('CEP não encontrado.');
+                    }
+                })
+                .catch(error => alert('Erro ao buscar o CEP: ' + error));
+        }
+    });
+</script>
+
+</body>
+</html>

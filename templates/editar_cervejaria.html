@@ -1,0 +1,36 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Cervejaria</title>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Editar Cervejaria</h2>
+    <form method="POST" enctype="multipart/form-data" class="p-4 bg-white shadow rounded">
+      {% csrf_token %}
+
+      <h3>Cervejaria</h3>
+      {{ form|crispy }}
+
+      <h3>Contatos</h3>
+      {{ formset.management_form }}
+
+      {% for subform in formset %}
+        <div class="mb-3 border p-3">
+          {{ subform|crispy }}
+        </div>
+      {% endfor %}
+
+      <button type="submit" class="btn btn-success">Salvar tudo</button>
+      <a href="{% url 'home' %}" class="btn btn-secondary ml-2">Cancelar</a>
+    </form>
+  </div>
+
+</body>
+</html>

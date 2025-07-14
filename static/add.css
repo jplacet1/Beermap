@@ -1,0 +1,291 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image:url(../media/indian-friends-pub-guys-girl-bar-celebration-mug-beer_ojTzT7b.jpg) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 4em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  color: #444;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+/* Exemplo de navegação, se quiser */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #f1c232;
+}
+
+
+/* Container principal */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Caixa central com conteúdo */
+.container {
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+  padding: 40px;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Mapa */
+.mapBox {
+  position: right;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  background: #fff;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mapBox iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Cartões de cervejaria */
+.cervejaria_card {
+  background-color: #6b6b6b;
+  color: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cervejaria_card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .mapBox {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+}
+
+.cervejaria_card .info {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cervejaria_card .nome {
+  font-weight: bold;
+  color: #fff;
+}
+
+.cervejaria_card .bolinha {
+  font-size: 1.5em;
+  color: #ffd700;
+}
+
+.cervejaria_card .bairro {
+  color: #e0e0e0;
+}
+
+img {
+  width: 100%;       /* ocupa 100% da largura do container */
+  height: auto;      /* altura proporcional à largura */
+  object-fit: cover; /* corta a imagem para preencher o espaço */
+  border-radius: 8px; /* opcional: bordas arredondadas */
+}
+.galeria{
+  width: 1000px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.galeria-box{
+  margin: 0;
+  background-color: #e0e0e0;
+  height: 500px;
+  width: 500px;
+  overflow: hidden;
+  display: flex;
+}
+
+img {
+  width: 500px;  
+  height: 500px;
+  object-fit: cover; 
+}
+
+.carousel {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel img {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .carousel img {
+    height: 250px;
+  }
+}
+
+.carousel-item img {
+  width: 500px;  /* Largura fixada */
+  height: 500px; /* Altura fixada */
+  object-fit: cover; /* Garante que a imagem ocupe a área sem esticar */
+  border-radius: 10px;
+}
+
+.carousel {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto; /* Para centralizar o carrossel */
+}
+
+/* Cabeçalho fixo com fundo branco */
+header {
+  width: 100%;
+  padding: 10px 20px; /* Ajuste o padding conforme necessário */
+  background-color: #ffffff; /* Fundo branco */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima do conteúdo */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo no cabeçalho */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 20px;
+  padding: 10px 0; /* Reduzir o espaçamento vertical do cabeçalho */
+}
+
+.logo-img {
+  width: 120px;  /* Tamanho da logo ajustado */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Adicionando margem para o conteúdo não ficar escondido atrás do cabeçalho fixo */
+body {
+  padding-top: 70px; /* Ajuste dependendo da altura do cabeçalho */
+}
+
+/* Evita que o cabeçalho se sobreponha ao conteúdo */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-btn .btn {
+  background-color: #f1c232; /* Cor de fundo do botão */
+  color: #333; /* Cor do texto */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none; /* Remove o underline */
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
+}
+
+.header-btn .btn:hover {
+  background-color: #e0a800; /* Cor de fundo ao passar o mouse */
+}
+
+/* Adicionando margem para o conteúdo não ficar escondido atrás do cabeçalho fixo */
+body {
+  padding-top: 70px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="file"] {
+  display: block;
+  width: 100%;
+  margin: 7px auto;
+  padding: 7px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 7px auto;
+  padding: 7px;
+  font-size: 1em;
+  background-color: #f1c232;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #f1c232;
+}
+
+i{
+  margin-right: 5px;
+}
+
+ul{
+  padding: 0;
+}

@@ -1,0 +1,194 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-image: url("{% static 'Beermap/backgroundfinal.png' %}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+
+header {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  align-self: unset;
+}
+
+/* === BOTÕES DO CABEÇALHO === */
+.header-btn .btn {
+  background-color: #f1c232;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+main {
+  padding-top: 120px;
+}
+
+h1{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+
+.info{
+  margin: 2rem;
+  padding: 1rem;
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0.445);
+  border-radius: 2rem;
+}
+
+.info .geral{
+  text-align: left;
+  
+}
+.container{
+  margin: 2rem;
+  padding: 1rem;
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.container #carouselExampleControlsNoTouching {
+  width: 100%;
+  margin: auto;
+}
+
+.container #carouselExampleControlsNoTouching .carousel-inner {
+  width: 100%;
+  height: 600px;
+}
+
+.container #carouselExampleControlsNoTouching .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+.container #carouselExampleControlsNoTouching .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .bloco .btn{
+  border: 0;
+  background-color: #f1c232;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+
+.container .mapBox{
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.bloco{
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  justify-content: space-between; /* Faz o testimonialCarousel ir para a esquerda e o formulário para a direita */
+  gap: 2rem; /* opcional: espaço entre os blocos */
+}
+
+.bloco #testimonialCarousel{
+  width: 500px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgba(0, 0, 0, 0.445);
+  display: flex;
+  justify-content: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border-radius: 2rem;
+}
+
+#testimonialCarousel:hover{
+  transform: scale(1.1);
+}
+
+.bloco .formulario{
+  width: 500px;
+  height: 300px;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgba(0, 0, 0, 0.445);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border-radius: 2rem;
+}
+
+.formulario:hover{
+  transform: scale(1.1);
+}
+
+
+.bloco .formulario .form-control {
+  overflow: hidden; /* esconde a barra de rolagem */
+  min-height: 80px; /* altura inicial */
+  width: 30rem; /* impede o redimensionamento manual */
+}
+
+#estrelinha{
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.semav{
+  border: 0;
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+

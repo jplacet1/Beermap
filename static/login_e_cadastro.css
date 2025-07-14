@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+  text-align: center;
+  color: #333;
+  margin: 5px;
+  padding: 5px;
+
+}
+h2{
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+  text-align: left;
+  color: #333;
+  margin: 5px;
+  padding: 5px;
+
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;  /* horizontal */
+  align-items: center;      /* vertical */
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  background-image: url('background.jpg');
+  background-size: cover;                   
+  background-position: center;              
+  background-repeat: no-repeat;   
+}
+
+.container {
+  width: 450px;               /* largura fixa para centralizar melhor */
+  text-align: center;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  margin: 7px auto;
+  padding: 7px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 7px auto;
+  padding: 7px;
+  font-size: 1em;
+  background-color: #f1c232;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #f1c232;
+}
+
+/* Cabeçalho fixo com fundo branco */
+header {
+  width: 100%;
+  padding: 10px 20px; /* Ajuste o padding conforme necessário */
+  background-color: #ffffff; /* Fundo branco */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima do conteúdo */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo no cabeçalho */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 20px;
+  padding: 10px 0; /* Reduzir o espaçamento vertical do cabeçalho */
+}
+
+.logo-img {
+  width: 120px;  /* Tamanho da logo ajustado */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Adicionando margem para o conteúdo não ficar escondido atrás do cabeçalho fixo */
+body {
+  padding-top: 70px; /* Ajuste dependendo da altura do cabeçalho */
+}
+
+/* Evita que o cabeçalho se sobreponha ao conteúdo */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-btn .btn {
+  background-color: #f1c232; /* Cor de fundo do botão */
+  color: #333; /* Cor do texto */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none; /* Remove o underline */
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
+}
+
+.header-btn .btn:hover {
+  background-color: #e0a800; /* Cor de fundo ao passar o mouse */
+}
+
+/* Adicionando margem para o conteúdo não ficar escondido atrás do cabeçalho fixo */
+body {
+  padding-top: 70px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="file"] {
+  display: block;
+  width: 100%;
+  margin: 7px auto;
+  padding: 7px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 7px auto;
+  padding: 7px;
+  font-size: 1em;
+  background-color: #f1c232;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #f1c232;
+}
+
+i{
+  margin-right: 5px;
+}
+
+ul{
+  padding: 0;
+}
